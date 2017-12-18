@@ -5,14 +5,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/back2"
     tools:context="com.eatit.user.eatit.MainActivity">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -32,42 +32,42 @@
 
     <LinearLayout
 
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:weightSum="2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:weightSum="2">
         
         <info.hoang8f.widget.FButton
             android:id="@+id/SignUpBtn"
-            android:text="Sign Up"
-            android:textColor="@android:color/black"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="Sign Up"
+            android:textColor="@android:color/black"
 
             app:buttonColor="@color/SignUpBtn"
+            app:cornerRadius="4dp"
             app:shadowColor="@android:color/background_dark"
             app:shadowEnabled="true"
             app:shadowHeight="5dp"
-            app:cornerRadius="4dp"
             />
 
         <info.hoang8f.widget.FButton
             android:id="@+id/SignInBtn"
-            android:text="Sign In"
-            android:textColor="@android:color/black"
-            android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="Sign In"
+            android:textColor="@android:color/black"
 
             app:buttonColor="@color/SignUpBtnAtv"
+            app:cornerRadius="4dp"
             app:shadowColor="@android:color/black"
             app:shadowEnabled="true"
             app:shadowHeight="5dp"
-            app:cornerRadius="4dp"
             />
 
     </LinearLayout>

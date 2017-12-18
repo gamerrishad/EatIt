@@ -5,28 +5,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/back2"
     tools:context="com.eatit.user.eatit.SignIn">
 
 
     <LinearLayout
-        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_centerInParent="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:orientation="vertical">
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/PhoneNumberEditor"
-            android:hint="Your Phone Number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Your Phone Number"
 
+            android:inputType="phone"
             android:text="+880"
             android:textColor="@android:color/white"
             android:textSize="24sp"
-            android:inputType="phone"
 
             app:met_baseColor="@android:color/white"
             app:met_floatingLabel="highlight"
@@ -38,14 +38,14 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/PasswordEditor"
-            android:hint="Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="Password"
 
+            android:inputType="textPassword"
             android:text="123456"
             android:textColor="@android:color/white"
             android:textSize="24sp"
-            android:inputType="textPassword"
 
             app:met_baseColor="@android:color/white"
             app:met_floatingLabel="highlight"
@@ -59,20 +59,20 @@
 
     <info.hoang8f.widget.FButton
         android:id="@+id/SignInBtn"
-        android:text="Sign In"
-        android:textColor="@android:color/black"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
         android:layout_alignParentBottom="true"
+        android:layout_margin="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Sign In"
+        android:textColor="@android:color/black"
 
         app:buttonColor="@color/SignUpBtnAtv"
+        app:cornerRadius="4dp"
         app:shadowColor="@android:color/black"
         app:shadowEnabled="true"
         app:shadowHeight="5dp"
-        app:cornerRadius="4dp"
         />
 
 </RelativeLayout>
