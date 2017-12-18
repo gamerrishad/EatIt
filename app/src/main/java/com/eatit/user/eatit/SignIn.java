@@ -2,8 +2,8 @@ package com.eatit.user.eatit;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -52,6 +52,7 @@ public class SignIn extends AppCompatActivity {
                         if (dataSnapshot.child(PhoneNumberEditor.getText().toString()).exists()) {
 
                             Users user = dataSnapshot.child(PhoneNumberEditor.getText().toString()).getValue(Users.class);
+                            user.setPhone(PhoneNumberEditor.getText().toString()); // Set Phone Number to user
 
                             if (user.getPassword().equals(PasswordEditor.getText().toString())) {
                                 Intent home = new Intent(SignIn.this, Home.class);

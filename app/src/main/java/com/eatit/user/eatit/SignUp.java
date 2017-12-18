@@ -1,9 +1,8 @@
 package com.eatit.user.eatit;
 
-import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -52,7 +51,7 @@ public class SignUp extends AppCompatActivity {
                             Toast.makeText(SignUp.this, "Phone Number Already Exists!", Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            Users user = new Users(NameEditor.getText().toString(), PasswordEditor.getText().toString());
+                            Users user = new Users(NameEditor.getText().toString(), PasswordEditor.getText().toString(), PhoneNumberEditor.getText().toString());
                             user_Table.child(PhoneNumberEditor.getText().toString()).setValue(user);
                             Toast.makeText(SignUp.this, "Sign Up Success! Please Sign in.", Toast.LENGTH_SHORT).show();
                             finish();

@@ -1,14 +1,18 @@
 package com.eatit.user.eatit;
 
+import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.eatit.user.eatit.Model.Food;
+import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.eatit.user.eatit.Database.Database;
+import com.eatit.user.eatit.Model.Food;
+import com.eatit.user.eatit.Model.Orders;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +32,7 @@ public class FoodDetail extends AppCompatActivity {
     String foodId = "01";
     FirebaseDatabase database;
     DatabaseReference foods;
+    Food currentFood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,16 @@ public class FoodDetail extends AppCompatActivity {
         //Init all other things
         numberButton = (ElegantNumberButton)findViewById(R.id.number_button);
         btnCart = (FloatingActionButton)findViewById(R.id.btnCart);
+
+        btnCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new Database(getBaseContext()).addToCart(new Orders(
+                        foodId, currentFood.getName(), numberButton.getNumber(), currentFood.getPrice(), currentFood.getDiscount()
+                ));
+                Toast.makeText(FoodDetail.this, "Added to Cart!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         foodName = (TextView)findViewById(R.id.food_name);
         foodPrice = (TextView)findViewById(R.id.food_price);
@@ -67,13 +82,13 @@ public class FoodDetail extends AppCompatActivity {
         foods.child(foodId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Food food = dataSnapshot.getValue(Food.class);
+                currentFood = dataSnapshot.getValue(Food.class);
 
-                Picasso.with(getBaseContext()).load(food.getImage()).into(foodImage);
-                collapsingToolbarLayout.setTitle(food.getName());
-                foodPrice.setText(food.getPrice());
-                foodName.setText(food.getName());
-                food_description.setText(food.getDescription());
+                Picasso.with(getBaseContext()).load(currentFood.getImage()).into(foodImage);
+                collapsingToolbarLayout.setTitle(currentFood.getName());
+                foodPrice.setText(currentFood.getPrice());
+                foodName.setText(currentFood.getName());
+                food_description.setText(currentFood.getDescription());
             }
 
             @Override

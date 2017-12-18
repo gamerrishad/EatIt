@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion "26.0.3"
     defaultConfig {
         applicationId "com.eatit.user.eatit"
         minSdkVersion 23
@@ -42,6 +42,9 @@ dependencies {
     })
 
     // Added Library
+    compile 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    compile 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+
     compile 'com.cepheuen.elegant-number-button:lib:1.0.2'
     compile 'com.android.support:design:26.+'
     compile 'com.android.support:appcompat-v7:26.+'

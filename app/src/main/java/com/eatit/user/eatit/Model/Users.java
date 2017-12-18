@@ -1,22 +1,27 @@
 package com.eatit.user.eatit.Model;
 
-/**
- * Created by User on 18-Nov-17.
- */
-
 public class Users {
-    private String name, password;
+    private String name, password, phone;
 
     public Users() {
-        name = "Abcd";
+        name = "abcd";
         password = "123456";
+        phone = "123456";
     }
 
-    public Users(String name, String password) {
+    public Users(String name, String password, String phone) {
         this.name = name;
         this.password = password;
+        this.phone = phone;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
     public String getName() {
         return name;
     }
