@@ -57,6 +57,8 @@ public class SignIn extends AppCompatActivity {
                             if (user.getPassword().equals(PasswordEditor.getText().toString())) {
                                 Intent home = new Intent(SignIn.this, Home.class);
                                 Common.currentUser = user;
+                                // DEBUG
+                                //String s = user_Table.child(PhoneNumberEditor.getText().toString()).child("Name").toString();
                                 startActivity(home);
                                 finish();
                             } else {
