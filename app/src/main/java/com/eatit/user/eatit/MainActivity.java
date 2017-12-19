@@ -2,8 +2,8 @@ package com.eatit.user.eatit;
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent signIn = new Intent(MainActivity.this, SignIn.class);
                 startActivity(signIn);
+
+                // Update this line, as I have to confirm any success login
+                finish();
             }
         });
     }
