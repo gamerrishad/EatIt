@@ -30,7 +30,7 @@ public class SignIn extends AppCompatActivity {
 
         PhoneNumberEditor = (MaterialEditText) findViewById(R.id.PhoneNumberEditor);
         PasswordEditor = (MaterialEditText) findViewById(R.id.PasswordEditor);
-        SignInBtn = (Button) findViewById(R.id.SignInBtn);
+        SignInBtn = findViewById(R.id.SignInBtn);
 
         // Setup Firebase
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -57,6 +57,9 @@ public class SignIn extends AppCompatActivity {
                             if (user.getPassword().equals(PasswordEditor.getText().toString())) {
                                 Intent home = new Intent(SignIn.this, Home.class);
                                 Common.currentUser = user;
+                                Toast.makeText(SignIn.this, "Welcome " +
+                                        Common.currentUser.getName() + "!", Toast.LENGTH_LONG).show();
+
                                 // DEBUG
                                 //String s = user_Table.child(PhoneNumberEditor.getText().toString()).child("Name").toString();
                                 startActivity(home);

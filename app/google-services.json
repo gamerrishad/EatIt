@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "345637333368-kn265koblbktv0nemd5dev6vqlhr82kq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.eatit.user.eatit",
+            "certificate_hash": "976371c976f8cc572b0b16e24709cb377b56c1f3"
+          }
+        },
+        {
           "client_id": "345637333368-1l9igq16g5f5gpe23farl86td55p3u5u.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
