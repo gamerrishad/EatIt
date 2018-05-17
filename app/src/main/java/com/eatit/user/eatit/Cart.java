@@ -121,6 +121,5 @@ public class Cart extends AppCompatActivity {
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);
 
         totalPriceText.setText(fmt.format(total));
-
     }
 }

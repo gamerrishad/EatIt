@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.eatit.user.eatit.Model.Orders;
@@ -30,11 +31,18 @@ class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickList
         cartItemPrice = itemView.findViewById(R.id.cartItemPrice);
         imageCart = itemView.findViewById(R.id.imgCart);
 
+        imageCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("<<<<<<<<<<<<<<<<<<<<<<");
+            }
+        });
+
     }
 
     @Override
     public void onClick(View v) {
-
+        System.out.println(">>>>>>>>>>>>>>>>>>>> ");
     }
 }
 
@@ -58,7 +66,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartViewHolder> {
     @Override
     public void onBindViewHolder(CartViewHolder holder, int position) {
         // Bujhi Nai
-        TextDrawable drawable = TextDrawable.builder().buildRound(listData.get(position).getQuantity(), Color.RED);
+        TextDrawable drawable = TextDrawable.builder().buildRound(listData.get(position).getQuantity(), Color.GRAY);
         holder.imageCart.setImageDrawable(drawable);
         Locale locale = new Locale("en", "US");
         NumberFormat fmt = NumberFormat.getCurrencyInstance(locale);

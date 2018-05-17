@@ -47,7 +47,7 @@
             android:text="Sign Up"
             android:textColor="@android:color/black"
 
-            app:buttonColor="@color/SignUpBtn"
+            app:fButtonColor="@color/SignUpBtn"
             app:cornerRadius="4dp"
             app:shadowColor="@android:color/background_dark"
             app:shadowEnabled="true"
@@ -63,7 +63,7 @@
             android:text="Sign In"
             android:textColor="@android:color/black"
 
-            app:buttonColor="@color/SignUpBtnAtv"
+            app:fButtonColor="@color/SignUpBtnAtv"
             app:cornerRadius="4dp"
             app:shadowColor="@android:color/black"
             app:shadowEnabled="true"
